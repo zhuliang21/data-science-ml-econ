@@ -83,3 +83,9 @@ print(df)
 
 Here, we import the pandas library and use the `pd` prefix with the `DataFrame` function to create a pandas DataFrame. `DataFrame` is a class in the pandas library that represents a two-dimensional, size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns).
 
+## More Resources
+
+Here are some resources for beginning Python programming:
+
+1. [Anaconda Installation Guide](https://docs.anaconda.com/anaconda/install/index.html)
+2. [Python Introduction by GeeksforGeeks](https://www.geeksforgeeks.org/introduction-to-python/)
