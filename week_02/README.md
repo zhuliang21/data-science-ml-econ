@@ -104,17 +104,15 @@ The gradient tells us the direction in which the cost function increases the fas
 
 The gradient $\nabla J(\theta)$ is fundamentally a collection of derivatives. In mathematics:
 
-- For a single-variable function $f(x)$, the derivative is defined as:
+For a single-variable function $f(x)$, the derivative is defined as:
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+$$
 
-  $$
-  f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
-  $$
-
-- For a multi-variable function, the gradient is a vector composed of all the partial derivatives:
-
-  $$
-  \nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \dots \right)
-  $$
+For a multi-variable function, the gradient is a vector composed of all the partial derivatives:
+$$
+\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \dots \right)
+$$
 
 Thus, in machine learning, when we refer to the gradient, we are essentially referring to the mathematical derivatives that capture the rate of change of a function.
 
