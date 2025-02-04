@@ -105,11 +105,15 @@ The gradient tells us the direction in which the cost function increases the fas
 The gradient $\nabla J(\theta)$ is fundamentally a collection of derivatives. In mathematics:
 
 For a single-variable function $f(x)$, the derivative is defined as:
+
 $$
 f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
 $$
 
+It measures how much $f(x)$ changes with a small change ($h$) in $x$. In the graph, the derivative represents the slope of the tangent line to the curve at a point.
+
 For a multi-variable function, the gradient is a vector composed of all the partial derivatives:
+
 $$
 \nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \dots \right)
 $$
@@ -130,8 +134,9 @@ $$
 f'(x) = 2x
 $$
 
-- **At $x = 2$:**  
+- At $x = 2$:
   The derivative is $f'(2) = 4$. This means that around $x = 2$, a small increase in $x$ will increase $f(x)$ at a rate of 4 units per unit change in $x$.
+- You can check this by hand: $f(2) = 4$, while $f(2.1) = 4.41$. The difference is $0.41$, which is approximately $0.4$ times the change in $x$ ($0.1$). This increase is a little more than $4$ times the change in $x$, which is expected since we are at $x = 2$ where the function is increasing rapidly (slpoe of the curve is steeper when $x$ is larger).
 
 ### Application in Algorithms
 
@@ -141,16 +146,50 @@ $$
 x_{\text{new}} = x_{\text{old}} - \eta \cdot f'(x_{\text{old}})
 $$
 
-- **If $x = 2$** and the learning rate $\eta$ is 0.1, then:
+- If $x = 2$ and the learning rate $\eta$ is 0.1, then:
 
-  $$
-  x_{\text{new}} = 2 - 0.1 \times 4 = 2 - 0.4 = 1.6
-  $$
+$$
+x_{\text{new}} = 2 - 0.1 \times 4 = 2 - 0.4 = 1.6
+$$
 
-This update rule shows how the derivative informs us about the change in \(x\) required to reduce the value of $f(x)$.
+This update rule shows how the derivative informs us about the change in $x$ required to reduce the value of $f(x)$.
 
 ![Saraj Rival’s noteboo](https://www.makerluis.com/content/images/size/w2400/2023/11/Gradient_parabola_step_sizes.jpeg)
 
+From the figure above, we can see that the algorithm will **adjust the parameter $x$ in the direction** that reduces the function value, ultimately converging to the minimum.
+
+Here is a simple implementation of gradient descent in Python:
+
+```python
+# Using gradient descent to find the minimum of f(x) = x^2
+
+def f(x):
+  return x**2
+
+# the gradient of f(x) can be conveniently calculated as:
+def grad_f(x):
+  return 2 * x
+
+# Set an initial guess for x, learning rate, and convergence criteria
+x = 10.0  # initial value
+learning_rate = 0.1 # learning rate
+max_iter = 50
+tolerance = 1e-6
+
+print("Iteration\t   x\t          f(x)\t           Gradient")
+for i in range(max_iter):
+  gradient = grad_f(x)
+  print(f"{i+1:9d}\t {x:7.6f}\t {f(x):7.6f}\t {gradient:9.6f}")
+  # Update x using gradient descent rule
+  x_new = x - learning_rate * gradient
+  if abs(x_new - x) < tolerance:
+    x = x_new
+    break
+  x = x_new
+
+print("\nConverged: x =", x, "with f(x) =", f(x))
+```
+
 ### Conclusion
 
-Gradients in machine learning are essentially the mathematical derivatives that measure the rate of change of a function. By understanding this connection and using simple examples such as the derivative of $f(x) = x^2$, we can better appreciate how gradient-based methods guide parameter updates to optimize model performance.
+Gradients in machine learning are essentially the mathematical derivatives that measure the rate of change of a function. By understanding this connection and using simple examples such as the derivative of $f(x) = x^2$, we can better appreciate how gradient-based methods guide parameter updates to optimize model performance
