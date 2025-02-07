@@ -61,7 +61,6 @@ print(determinant)
 
 ### Inverse
 
-
 ```python
 # Calculate the inverse of a matrix
 inverse = np.linalg.inv(matrix1)
@@ -125,6 +124,14 @@ Thus, in machine learning, when we refer to the gradient, we are essentially ref
 Consider a basic example with a single-variable function:
 
 $$
+f(x) = 3x
+$$
+
+The derivative of this function is: $ f'(x) = 3$. This means that for every unit increase in $x$, $f(x)$ increases by 3 units. In the graph, this is represented by a straight line with a slope of 3. There is no maximum or minimum in this case, as the function is linear.
+
+Now, consider a quadratic function:
+
+$$
 f(x) = x^2
 $$
 
@@ -134,9 +141,35 @@ $$
 f'(x) = 2x
 $$
 
+- This derivative is dependent on $x$.
+
 - At $x = 2$:
   The derivative is $f'(2) = 4$. This means that around $x = 2$, a small increase in $x$ will increase $f(x)$ at a rate of 4 units per unit change in $x$.
 - You can check this by hand: $f(2) = 4$, while $f(2.1) = 4.41$. The difference is $0.41$, which is approximately $0.4$ times the change in $x$ ($0.1$). This increase is a little more than $4$ times the change in $x$, which is expected since we are at $x = 2$ where the function is increasing rapidly (slpoe of the curve is steeper when $x$ is larger).
+
+You can run the following code to visualize the function and its derivative:
+
+```python
+import matplotlib.pyplot as plt  # type: ignore
+import numpy as np # type: ignore
+# plot two graphs: left y=3x, right y=x^2
+
+x = np.linspace(-10, 10, 100)
+y1 = 3 * x
+y2 = x ** 2
+fig, (ax1, ax2) = plt.subplots(1, 2)
+ax1.plot(x, y1)
+ax2.plot(x, y2)
+ax1.set_title('y=3x')
+ax2.set_title('y=x^2')
+plt.show()
+
+# save it to a png file
+fig.savefig('plot.png')
+```
+
+You will get the following figure:
+![plot](plot.png)
 
 ### Application in Algorithms
 
