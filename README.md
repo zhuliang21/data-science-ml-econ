@@ -8,4 +8,4 @@ This repository contains the materials for the TA sessions of the course ECO 322
 
 - [week_01](./week_01/README.md): Introduction to Python and Jupyter Notebook
 - [week_02](./week_02/README.md): Numpy matrix operations, Derivative, and Gradient Descent
-- [week_03](./week_03/README.md): Introduction to Pandas
+- [week_03](./week_03/README.md): Pandas Basics I
