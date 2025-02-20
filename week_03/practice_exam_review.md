@@ -18,13 +18,14 @@ Explanation: This is an example of supervised learning because you have labeled 
 
 ---
 
-
 **Qestion 2**: Which of the following types of errors goes along with regression?
 
 Note: There are two type of modeling: Regression and Classification.
-Regression is when you predict a **continuous** value, e.g. the price of a house, the temperature, etc; Classification is when you predict a **discrete** value, e.g. whether an email is spam or not, whether a customer will buy a product or not, etc.
 
-Option A: You predict a customer would purcase, and they do not purchase.
+- Regression is when you predict a **continuous** value, e.g. the price of a house, the temperature, etc; 
+- Classification is when you predict a **discrete** value, e.g. whether an email is spam or not, whether a customer will buy a product or not, etc.
+
+Option A: You predict a customer would purchase, and they do not purchase.
 
 Explanation: This is an example of classification error because you are predicting a discrete value (whether the customer will purchase or not).
 
@@ -91,7 +92,7 @@ Option E is not a possible explanation because if the function is decreasing eve
 
 ---
 
-**Question 5**:  If a function is decreasing everywhere, whihc of the following will occur hwen running gradient descent to minimize the function?
+**Question 5**:  If a function is decreasing everywhere, which of the following will occur hwen running gradient descent to minimize the function?
 
 Option A: The algorithm will converge to a local minimum
 
@@ -113,7 +114,7 @@ Option A: True
 Option B: False
 
 Explanation: False. Newton's method is a second-order optimization algorithm that uses the Hessian matrix to find the minimum of a function, which can lead to faster convergence than gradient descent.
-However, the Hessian matrix itself can be computationally expensive to calculate, especially for high-dimensional problems. 
+However, the Hessian matrix itself can be computationally expensive to calculate, especially for high-dimensional problems.
 
 So we have two time variants of the same algorithm: the steps of the algorithm and the time to compute each step. Newton's method is faster in terms of the number of steps, but each step is more expensive. So in some cases, Newton's method can be slower than gradient descent.
 
@@ -134,4 +135,3 @@ Explanation: If the learning rate is too high, the algorithm may overshoot (mean
 When the learning rate is small (less than 1), the algorithm will converge to the minimum step by step. When the learning rate is too high (equal to ), it skips the symmetric point which have the same absolute value of the gradient, and thus it will bounce back and forth between two points, and thus it will never converge. However, as long as the learning rate is less than 1, the algorithm will converge.
 
 ---
-
