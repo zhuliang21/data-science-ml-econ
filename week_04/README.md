@@ -25,6 +25,8 @@ df = pd.DataFrame(data)
 df.to_csv('data.csv', index=False)
 ```
 
+The `index=False` parameter in the `to_csv()` function ensures that the index is not written to the CSV file. (You can try to remove it and see the difference in the output csv file.)
+
 ### Reading from CSV
 
 You should see a file named `data.csv` in the current directory. Now, let's read this CSV file into a DataFrame by pandas:
@@ -35,7 +37,7 @@ df = pd.read_csv('data.csv')
 print(df)
 ```
 
-Here the `read_csv()` function reads the CSV file and creates a DataFrame. The `index=False` parameter in the `to_csv()` function ensures that the index is not written to the CSV file. This function belongs to the pandas library, which is imported as `pd`.
+Here the `read_csv()` function reads the CSV file and creates a DataFrame. This function belongs to the pandas library, which is imported as `pd`.
 
 ### Checking the DataFrame
 
