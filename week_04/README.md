@@ -1,4 +1,4 @@
-# Week 03
+# Week 04
 
 ## Pandas Basics I
 
@@ -35,6 +35,8 @@ df = pd.read_csv('data.csv')
 print(df)
 ```
 
+Here the `read_csv()` function reads the CSV file and creates a DataFrame. The `index=False` parameter in the `to_csv()` function ensures that the index is not written to the CSV file. This function belongs to the pandas library, which is imported as `pd`.
+
 ### Checking the DataFrame
 
 You can perform various operations on the DataFrame, such as displaying the first few rows using the `head()` method:
@@ -43,6 +45,8 @@ You can perform various operations on the DataFrame, such as displaying the firs
 # Displaying the first few rows
 print(df.head())
 ```
+
+Here the `head()` is a method that returns the first 5 rows of the DataFrame by default. The difference between function and method is that a function is a standalone block of code that performs a specific task, while a method is a function that is associated with an **object**. In this case, the `head()` method is associated with the DataFrame object `df`.
 
 Or check the shape of the DataFrame by using the `shape` attribute:
 
@@ -120,4 +124,3 @@ print(df)
 ```
 
 Now the `Country` column has been removed from the DataFrame.
-
