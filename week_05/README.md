@@ -1,4 +1,4 @@
-# Week 04
+# Week 05
 
 ## Pandas Basics II
 
@@ -23,12 +23,12 @@ print(df)
 Notice the `NaN` value in the 'Score' column. This represents a missing value.
 In the data above, we have a missing value in the 'Score' column for Charlie.
 
-#### Drop Missing Values
+#### Drop Records with Missing Values
 
 One way to handle missing values is to drop the rows or columns containing them. You can use the `dropna()` method for this.
 
 ```python
-# replicate the df to df1
+# replicate the df to df2
 df1 = df.copy()
 # Drop rows with any missing values
 df1.dropna(inplace=True)
