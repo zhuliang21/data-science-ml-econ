@@ -2,7 +2,7 @@
 
 ## Numpy Basics
 
-`numpy` is a powerful library for numerical computing in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays. 
+`numpy` is a powerful library for numerical computing in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays.
 
 Suppose we have a list of numbers, we can convert it to a `numpy` array by using the `np.array()` function:
 
